@@ -286,6 +286,10 @@ Session是服务器端保持状态的方案，Cookie是客户端保持状态的�
 
 Cookie保存在客户端本地，客户端请求服务器时会将Cookie一起提交；Session保存在服务端，通过检索Sessionid查看状态。保存Sessionid的方式可以采用Cookie，如果禁用了Cookie，可以使用URL重写机制（把会话ID保存在URL中）。
 
+1. cookie只能存ASCII，session可以存任何
+2. cookie存在浏览器，容易被恶意利用，需要时可以加密cookie，然后在服务器解密
+3. 大型网站不宜把所有的session放在服务器，开销太大
+
 ### 从输入网址到获得页面的过程 (越详细越好)？
 
 1. 浏览器查询 DNS，获取域名对应的IP地址:具体过程包括浏览器搜索自身的DNS缓存、搜索操作系统的DNS缓存、读取本地的Host文件和向本地DNS服务器进行查询等。对于向本地DNS服务器进行查询，如果要查询的域名包含在本地配置区域资源中，则返回解析结果给客户机，完成域名解析(此解析具有权威性)；如果要查询的域名不由本地DNS服务器区域解析，但该服务器已缓存了此网址映射关系，则调用这个IP地址映射，完成域名解析（此解析不具有权威性）。如果本地域名服务器并未缓存该网址映射关系，那么将根据其设置发起递归查询或者迭代查询；
@@ -297,9 +301,43 @@ Cookie保存在客户端本地，客户端请求服务器时会将Cookie一起�
 
 ### DNS查询的具体过程？
 
+具体查看笔记
+
 ### HTTP2.0
 
+1. 将报文分为headers frame和data frame，只有一个TCP连接存在。
+2. 请求资源时，会把复加的js/css一起发
+3. 客户端和服务端同时维护一个之前出现的header，避免重复传输；使用哈弗曼编码压缩header。减少了网络流量。
+
 ### HTTP request和response的header有什么内容？
+
+通用：
+cache-control 缓存控制
+connection 管理持久连接
+date 创建报文的日期
+
+request：
+accept 用户可处理的媒体类型
+accept-charset
+accept-encoding
+accept-language
+host
+if-modified
+user-agent
+Access-Control-Allow-Origin
+
+response:
+age 资源创建的经过时间
+server
+
+body:
+allow 支持的http方法
+content-type
+content-length
+content-encoding
+content-language
+expires
+
 
 ### HTTP请求有哪些常见状态码？
 
@@ -362,6 +400,18 @@ Cookie保存在客户端本地，客户端请求服务器时会将Cookie一起�
 ### 什么是NAT (Network Address Translation, 网络地址转换)？
 
 用于解决内网中的主机要和因特网上的主机通信。由NAT路由器将主机的本地IP地址转换为全球IP地址，分为静态转换（转换得到的全球IP地址固定不变）和动态NAT转换。
+
+### 什么是代理？
+
+代理服务器接收客户端请求，并转发。主要目的有：
+1. 缓存
+2. 负载均衡
+3. 网络访问控制
+
+正向代理：用户可以察觉，位于客户端和目标服务器之间的代理服务器(中间服务器)。为了从原始服务器取得内容，客户端向代理服务器发送一个请求，并且指定目标服务器
+
+反向代理：对于客户端来说，反向代理就好像目标服务器。并且客户端不需要进行任何设置。
+
 
 ### 参考
 - [面试/笔试第一弹 —— 计算机网络面试问题集锦](https://blog.csdn.net/justloveyou_/article/details/78303617)
