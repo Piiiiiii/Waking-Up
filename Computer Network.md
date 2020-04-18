@@ -299,6 +299,8 @@ Cookie保存在客户端本地，客户端请求服务器时会将Cookie一起�
 
 ### HTTP2.0
 
+### HTTP request和response的header有什么内容？
+
 ### HTTP请求有哪些常见状态码？
 
 1. 2xx状态码：操作成功。200 OK
