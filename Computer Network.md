@@ -312,31 +312,31 @@ Cookie保存在客户端本地，客户端请求服务器时会将Cookie一起�
 ### HTTP request和response的header有什么内容？
 
 通用：
-1.cache-control 缓存控制
-2.connection 管理持久连接
-3.date 创建报文的日期
+1. cache-control 缓存控制
+2. connection 管理持久连接
+3. date 创建报文的日期
 
 request：
-1.accept 用户可处理的媒体类型
-2.accept-charset
-3.accept-encoding
-4.accept-language
-5.host
-6.if-modified
-7.user-agent
-8.Access-Control-Allow-Origin
+1. accept 用户可处理的媒体类型
+2. accept-charset
+3. accept-encoding
+4. accept-language
+5. host
+6. if-modified
+7. user-agent
+8. Access-Control-Allow-Origin
 
 response:
-1.age 资源创建的经过时间
-2.server
+1. age 资源创建的经过时间
+2. server
 
 body:
-1.allow 支持的http方法
-2.content-type
-3.content-length
-4.content-encoding
-5.content-language
-6.expires
+1. allow 支持的http方法
+2. content-type
+3. content-length
+4. content-encoding
+5. content-language
+6. expires
 
 
 ### HTTP请求有哪些常见状态码？
