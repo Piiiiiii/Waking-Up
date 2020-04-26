@@ -288,9 +288,9 @@ InnoDB的索引使用的是B+树实现，B+树对比B树的好处：
 <details>
 <summary>SQL 语句的优化</summary>
 
-> 分析慢查询日志：记录了在MySQL中响应时间超过阀值long_query_time的SQL语句，通过日志去找出IO大的SQL以及发现未命中索引的SQL
+> 分析慢查询日志：记录了在MySQL中响应时间超过阀值long_query_time的SQL语句，通过日志去找出IO大的SQL以及发现未命中索引的SQL https://www.cnblogs.com/peter-yan/p/8670005.html
 
-> 使用 Explain 进行分析：通过explain命令可以得到表的读取顺序、数据读取操作的操作类型、哪些索引可以使用、**哪些索引被实际使用**、表之间的引用以及**被扫描的行数**等问题；
+> 使用 Explain 进行分析：通过explain命令可以得到表的读取顺序、数据读取操作的操作类型、哪些索引可以使用、**哪些索引被实际使用**、表之间的引用以及**被扫描的行数**等问题；https://www.cnblogs.com/songwenjie/p/9409852.html
 
 - 多用恰当的索引
 - 应尽量避免在 where 子句中使用```!=```、```<```、```>```操作符或对字段进行null值判断，否则将引擎放弃使用索引而进行全表扫描；
