@@ -229,7 +229,7 @@ HTTP不可以使用UDP，HTTP需要基于可靠的传输协议，而UDP不可靠
 5. 超时重发：发送方发出数据之后，启动一个定时器，超时未收到接收方的确认，则重新发送这个数据；
 6. 流量控制：确保接收端能够接收发送方的数据而不会缓冲区溢出
 
-
+### HTTPS
 1. 设计思路：https://zhuanlan.zhihu.com/p/25976060
 2. 具体例程：https://zhuanlan.zhihu.com/p/51001284
 3. 简单版本的HTTPS，方便记忆：https://www.cnblogs.com/piperck/p/6132467.html
